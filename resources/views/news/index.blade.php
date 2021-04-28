@@ -15,3 +15,8 @@
   {{$allNews->links()}}
 </div>
 @endsection
+<style>
+  svg {
+      width: 20px;
+  }
+</style>

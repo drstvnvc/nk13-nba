@@ -15,4 +15,8 @@ class News extends Model
   {
     return $this->belongsTo(User::class);
   }
+
+  public function teams() {
+    return $this->belongsToMany(Team::class, 'news_teams');
+  }
 }
