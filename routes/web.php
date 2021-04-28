@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [TeamController::class, 'index']);
 Route::get('/teams/{team}', [TeamController::class, 'show'])->name('team');
 Route::get('/players/{player}', [PlayerController::class, 'show'])->name('player');
+
+Route::post('/team/{team}/comments', [CommentController::class, 'store'])->name('createComment');
 
 Route::get('/register', [AuthController::class, 'getRegisterForm']);
 Route::post('/register', [AuthController::class, 'register']);
